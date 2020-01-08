@@ -26,4 +26,10 @@ There is a makefile attached to the repository. On a linus machine a simple make
                                        where M represents the number of PC bits used to index the bimodal table. 
                             - Gshare :    ./sim.out gsahre <M> <N> <BTB Size> <BTB Associativity> <trace file> 
                                        where M and N represent the number of PC bits and the global branch history register bits used to index the gshare table respectively.
-                            - Hybrid :    ./sim.out hybrid <K> <M1> <N> <m2> <BTB Size> <BTB Associativity> <tracefile>
+                            - Hybrid :    ./sim.out hybrid <K> <M1> <N> <M2> <BTB Size> <BTB Associativity> <tracefile>
+                                        where M1 and N are the number of PC bits and the global branch history register used to index the gshare table respectively, M2 represents the number of PC bits used to index the bimodal table and K represents the number of PC bits required to index the chooser table. 
+
+On a windows machine, using any of the C++ IDE the file could be complied and executed. However, it is important to pass arguments to your program in the format specified above. The same can be done using command prompt as well. 
+
+More details for this project can be seen in the project spec document and the C++ file. 
+
