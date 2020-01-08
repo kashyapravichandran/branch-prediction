@@ -33,3 +33,4 @@ On a windows machine, using any of the C++ IDE the file could be complied and ex
 
 More details for this project can be seen in the project spec document and the C++ file. 
 
+Few example trace files are also uploaded to this repo.
