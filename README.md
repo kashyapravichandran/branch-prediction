@@ -8,7 +8,7 @@ This repository has codes pertaining to project 2 of NCSU's ECE 563 course on mi
 
 ## Bimodal
 
-The predictor uses a 4 level smith counter. We increament the counter when the branch is taken and decrement it when the branch is not taken. The counter saturates at 0 and at 3. If the value is 1 or 0 the branch is predicted to not being taken and if its 2 or 3 it is predicted taken. We use the program counter to index the branch prediction table. We ignore the last two bits and then use the next 'm' bits of the PC to index a location in the table. A complete description of the predictor is given in the project spec sheet. 
+The predictor uses a 4 level smith counter. We increament the counter when the branch is taken and decrement it when the branch is not taken. The counter saturates at 0 and at 3. If the value is 1 or 0 the branch is predicted to not being taken and if its 2 or 3 it is predicted taken. We use the program counter to index the branch prediction table. We ignore the last two bits and then use the next 'm' bits of the PC to index a location in the table. A complete description of the predictor is given in the project spec document. 
 
 ## G-Share 
 
@@ -16,4 +16,14 @@ This kind of a predictor table uses the PC value hashed with a branch history re
 
 ## Hybrid 
 
-The predictor combines both the bimodal and the G-Share predictor 
+The predictor combines both the bimodal and the G-Share predictor. With a 2 bit choser counter, the simulator decides which predictor's prediction it needs to chose. If the counter's value is more than 2 it choses gshare and when it is less than 2 it chooses bimodal. The counters in bimodal and gshare are updated based on the prediction of the chooser table and the actual result of the branch.
+
+## Usage
+
+There is a makefile attached to the repository. On a linus machine a simple make command would create the executable that can be accessed from the terminal. 
+
+                            - Bimodal:    ./sim.out bimodal <M> <BTB Size> <BTB Associativity> <trace file>
+                                       where M represents the number of PC bits used to index the bimodal table. 
+                            - Gshare :    ./sim.out gsahre <M> <N> <BTB Size> <BTB Associativity> <trace file> 
+                                       where M and N represent the number of PC bits and the global branch history register bits used to index the gshare table respectively.
+                            - Hybrid :    ./sim.out hybrid <K> <M1> <N> <m2> <BTB Size> <BTB Associativity> <tracefile>
