@@ -20,7 +20,7 @@ The predictor combines both the bimodal and the G-Share predictor. With a 2 bit 
 
 ## Usage
 
-There is a makefile attached to the repository. On a linus machine a simple make command would create the executable that can be accessed from the terminal. 
+There is a makefile attached to the repository. On a linux machine a simple make command would create the executable that can be accessed from the terminal. 
 
                             - Bimodal:    ./sim.out bimodal <M> <BTB Size> <BTB Associativity> <trace file>
                                        where M represents the number of PC bits used to index the bimodal table. 
